@@ -16,7 +16,7 @@ app.get("/:date", async (c) => {
       datetime.getHours(),
       datetime.getMinutes(),
     ],
-    startInputType: "utc",
+    startInputType: "local",
     duration: {
       hours: 1,
       //    minutes: 30
