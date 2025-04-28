@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "@hono/hono": "jsr:@hono/hono@^4.7.7",
+    "ics": "npm:ics@^3.8.1"
+  }
+}
