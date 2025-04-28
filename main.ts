@@ -16,7 +16,7 @@ app.get("/:date", async (c) => {
       datetime.getHours(),
       datetime.getMinutes(),
     ],
-    startInputType: "local",
+    startInputType: "utc",
     duration: {
       hours: 1,
       //    minutes: 30
@@ -78,5 +78,9 @@ function decodeDatetime(code: string) {
   const year = 2025 + yearOffset;
   const minute = minuteQuarter * 15;
 
-  return new Date(Date.UTC(year, month - 1, day, hour, minute));
+  const timezoneOffset = 8 * 60 * 60 * 1000;
+
+  return new Date(
+    Date.UTC(year, month - 1, day, hour, minute) - timezoneOffset,
+  );
 }
